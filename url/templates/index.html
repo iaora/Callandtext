@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header class="intro">
+  <div class="intro-body">
+{% if error %}
+<h2><div class="alert" role="alert">
+  {{ error }}
+</div></h2>
+{% endif %}
+
+{% if url %}
+<h4><p> Your shortened URL is <br>{{ url_for('red', url=url, _external=True) }} </p></h4>
+{% endif %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <!--p class="intro-text"> Weed </p-->
+
+            <form action="/" method="post">
+              <p><h4>* Enter URL to shorten:</h4></p>
+              <input type="text" class="form-control" name="long_url"></input>
+              <br><br>
+              <p><h4>Enter custom short URL:</h4></p>
+              <input type="text" class="form-control" name="short_url"></input>
+              <br><br><br>
+              <button type=button" class="btn btn-lg btn-default">Shorten!</button>
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% endblock %}
