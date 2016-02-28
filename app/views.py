@@ -43,9 +43,10 @@ def index():
                                     choice=choice)
         if choice == 'Text':
             print "blurple"
-            client.messages.create(to='+1' + out_phone_number,
-                                   from_='+1862309011',
-                                   body="hellothere!")
+            client.messages.create(to='+1'+out_phone_number,
+                                   from_='+18623079011',
+                                   body=request.form['body'])
+
             print "white"
             return render_template('success.html', 
                                     out_phone=out_phone_number,
