@@ -13,9 +13,9 @@
       <div class="row">
         <!-- "style="padd-top: 5%;" is called in-line -->
         <div class="col-md-6 col-md-offset-3" style="padding-top: 15%;">
-            <h1>Calling and Texting</h1>
+          <h1>Calling and Texting</h1>
             <form action="/" method="post">
-              <p><h4>Please enter a number to call:</h4></p>
+              <p><h4>Please enter a number to call or text:</h4></p>
               <input type="text" class="form-control" name="out_phone"></input>
               <br><br><br>
 
@@ -29,6 +29,10 @@
               </div>
               --!>
               <input type="text" class="form-control" name="body"></input>
+              <br><br><br>
+
+              <p><h4>Enter the number of times to send messages! </h4></p>
+              <input type="text" class="form-control" name="repeat"></input>
               <br><br><br>
 
               <button type=button" class="btn btn-lg btn-default" name=choice value=Call>Call</button> 

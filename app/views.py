@@ -3,6 +3,7 @@ from app import app, db, client
 from app.models import Person
 from urllib2 import urlopen
 import random
+import time
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -23,7 +24,12 @@ def index():
         print "apples"
 
         choice = request.form['choice']
+        repeat = request.form['repeat']
+        i = 0
+        if repeat is None:
+            repeat = 1
         print choice
+        print repeat
         if choice == 'Call':
             print "bannanananana"
 
@@ -37,9 +43,14 @@ def index():
                                     choice=choice)
         if choice == 'Text':
             print "blurple"
-            client.messages.create(to='+1'+out_phone_number,
+            
+            while i < int(repeat):
+                print i
+                client.messages.create(to='+1'+out_phone_number,
                                    from_='+18623079011',
                                    body=request.form['body'])
+                time.sleep(5)
+                i=i+1
 
             print "white"
             return render_template('success.html', 
