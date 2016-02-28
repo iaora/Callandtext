@@ -17,4 +17,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 SQLALCHEMY_DATABASE_URI = 'mysql://url:url@localhost/url'
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 SQLALCHEMY_TRACK_MODIFICATIONS = True
-SECRET_KEY = 'url'
+
+ACCOUNT_SID = "AC067524dad918b6a9db9867f79aaa30de"
+AUTH_TOKEN = "fc941e15bd560bd15dd9ec17d6bdb9e4"
+
+
+SECRET_KEY = 'person'

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header class="intro">
+  <div class="intro-body">
+{% if error %}
+<h2><div class="alert" role="alert">
+  {{ error }}
+</div></h2>
+{% endif %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <!--p class="intro-text"> Weed </p-->
+
+            <form action="/" method="post">
+              <p><h4>Please enter a number to call:</h4></p>
+              <input type="text" class="form-control" name="out_phone"></input>
+              <br><br><br>
+              <button type=button" class="btn btn-lg btn-default">Call!</button>
+
+              <p><h4>Would you like to text or call?</h4></p>
+
+              <div class="col-lg-3">
+                <select class="form-control" id="choice" name="choice">
+                  <option>Text</option>
+                  <option>Call</option>
+                </select>
+              </div>
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% endblock %}
