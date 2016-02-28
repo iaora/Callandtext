@@ -1,7 +1,5 @@
 from flask import render_template, flash, redirect, request, url_for
-from twilio.rest import TwilioRestClient
-
-from app import app, db
+from app import app, db, client
 from app.models import Person
 from urllib2 import urlopen
 import random
@@ -21,10 +19,6 @@ def index():
             return render_template('error.html')
         print "peaches"
         print out_phone_number
-        account_sid = "AC067524dad918b6a9db9867f79aaa30de"
-        auth_token  = "fc941e15bd560bd15dd9ec17d6bdb9e4"
-
-        client = TwilioRestClient(account_sid, auth_token)
 
         print "apples"
 
